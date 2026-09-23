@@ -66,8 +66,15 @@ WSGI_APPLICATION = 'chiikawadjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'chiikawa',
+        'USER': 'kail00n',
+        'PASSWORD': 'CHUMSRK0987',
+        'HOST': 'localhost',
+        'PORT': '8081',
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_ALL_TABLES"',
+        },
     }
 }
 
