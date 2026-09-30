@@ -67,11 +67,11 @@ WSGI_APPLICATION = 'chiikawadjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'chiikawa',
-        'USER': 'kail00n',
-        'PASSWORD': 'CHUMSRK0987',
+        'NAME': 'chiikawa_db',
+        'USER': 'root',
+        'PASSWORD': 'awdrgyj8lp',
         'HOST': 'localhost',
-        'PORT': '8081',
+        'PORT': '3306',
         'OPTIONS': {
             'init_command': 'SET sql_mode="STRICT_ALL_TABLES"',
         },

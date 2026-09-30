@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Producto Chiikawa</title>
+    <!-- Importamos Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <h2>Mantenedor de Productos Chiikawa</h2>
+                <form method="post">
+                    <!-- Token de seguridad obligatorio en Django -->
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                        {{ form.non_field_errors }}
+
+                        <div class="col-md-4 mb-3">
+                            {{ form.sku.label_tag }}
+                            {{ form.sku }}
+                            {{ form.sku.errors }}
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                            {{ form.nombre.label_tag }}
+                            {{ form.nombre }}
+                            {{ form.nombre.errors }}
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            {{ form.descripcion.label_tag }}
+                            {{ form.descripcion }}
+                            {{ form.descripcion.errors }}
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            {{ form.tamano.label_tag }}
+                            {{ form.tamano }}
+                            {{ form.tamano.errors }}
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            {{ form.precio.label_tag }}
+                            {{ form.precio }}
+                            {{ form.precio.errors }}
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            {{ form.fecha_lanzamiento.label_tag }}
+                            {{ form.fecha_lanzamiento }}
+                            {{ form.fecha_lanzamiento.errors }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            {{ form.categoria.label_tag }}
+                            {{ form.categoria }}
+                            {{ form.categoria.errors }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            {{ form.personaje.label_tag }}
+                            {{ form.personaje }}
+                            {{ form.personaje.errors }}
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a class="btn btn-dark" href="{% url 'inicio' %}">Ir al Inicio</a>
+                        </div>
+                        <div class="col text-end">
+                            <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
